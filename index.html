@@ -15,29 +15,62 @@ h1{font-size:26px;margin:0 0 8px}h2{font-size:18px;margin:32px 0 6px}
 p,li{margin:6px 0}a{color:var(--accent)}
 .muted{color:var(--muted)}.meta{color:var(--muted);font-size:14px;margin-bottom:24px}
 nav{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:24px;font-size:15px}
-.lang{border-top:1px solid var(--line);margin-top:48px;padding-top:8px}
+.tools{margin-left:auto}
+/* 언어 전환: 스크립트가 body 에 data-show 를 달면 한 언어만 보이고, 스크립트가 없으면 둘 다 보인다 */
+body[data-show=ko] [data-lang=en],body[data-show=en] [data-lang=ko]{display:none}
+body:not([data-show]) .lang{border-top:1px solid var(--line);margin-top:48px;padding-top:8px}
+body:not([data-show]) a [data-lang=en]::before{content:" / "}
 </style>
 </head>
 <body>
 <main>
-<nav><a href="index.html">CANLogViewer</a><a href="privacy.html">개인정보처리방침 / Privacy Policy</a><a href="terms.html">이용약관 / Terms of Use</a></nav>
+<nav><a href="index.html">CANLogViewer</a>
+<a href="privacy.html"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span></a>
+<a href="terms.html"><span data-lang="ko">이용약관</span><span data-lang="en">Terms of Use</span></a>
+<span class="tools"><a href="#ko" data-set="ko">한국어</a> · <a href="#en" data-set="en">English</a></span></nav>
 
+<div data-lang="ko">
 <h1>CANLogViewer</h1>
-<p class="muted">Offline measurement log viewer for Android · 차량 측정 로그 오프라인 뷰어</p>
+<p class="muted">차량 측정 로그 오프라인 뷰어 (Android)</p>
 <p>MDF / MF4, BLF / ASC / TRC (+ DBC), 오실로스코프 CSV 파일을 휴대폰에서 바로 그래프로 봅니다.
 파일은 기기 안에서만 처리하며 어디로도 보내지 않습니다.</p>
-<p class="muted">Open MDF / MF4, BLF / ASC / TRC (+ DBC) and oscilloscope CSV files as graphs on your phone.
-Files are processed only on your device and never uploaded.</p>
-<h2>문의 / Contact</h2>
+<h2>문의</h2>
 <p><a href="mailto:canlogviewer.help@gmail.com">canlogviewer.help@gmail.com</a></p>
-<h2>문서 / Documents</h2>
+<h2>문서</h2>
 <ul>
-<li><a href="privacy.html">개인정보처리방침 / Privacy Policy</a></li>
-<li><a href="terms.html">이용약관 / Terms of Use</a></li>
+<li><a href="privacy.html">개인정보처리방침</a></li>
+<li><a href="terms.html">이용약관</a></li>
 </ul>
-<p class="meta">CANape, CANoe 는 Vector Informatik GmbH 의 상표이며 이 앱은 Vector 와 관계가 없습니다.
-CANape and CANoe are trademarks of Vector Informatik GmbH; this app is not affiliated with Vector.</p>
+<p class="meta">CANape, CANoe 는 Vector Informatik GmbH 의 상표이며 이 앱은 Vector 와 관계가 없습니다.</p>
+</div>
+<div class="lang" data-lang="en">
+<h1>CANLogViewer</h1>
+<p class="muted">Offline measurement log viewer for Android</p>
+<p>Open MDF / MF4, BLF / ASC / TRC (+ DBC) and oscilloscope CSV files as graphs on your phone.
+Files are processed only on your device and never uploaded.</p>
+<h2>Contact</h2>
+<p><a href="mailto:canlogviewer.help@gmail.com">canlogviewer.help@gmail.com</a></p>
+<h2>Documents</h2>
+<ul>
+<li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="terms.html">Terms of Use</a></li>
+</ul>
+<p class="meta">CANape and CANoe are trademarks of Vector Informatik GmbH; this app is not affiliated with Vector.</p>
+</div>
 
 </main>
+<script>
+/* 주소 끝 #ko / #en 이 있으면 그 언어, 없으면 브라우저 언어(한국어면 한국어, 그 밖에는 영어). 추적·저장 없음 */
+(function () {
+  var h = location.hash.replace('#', '');
+  var l = (h === 'ko' || h === 'en') ? h : (((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en');
+  function set(x) { document.body.setAttribute('data-show', x); document.documentElement.lang = x; }
+  set(l);
+  var a = document.querySelectorAll('[data-set]');
+  for (var i = 0; i < a.length; i++) {
+    a[i].addEventListener('click', function (e) { e.preventDefault(); set(this.getAttribute('data-set')); });
+  }
+})();
+</script>
 </body>
 </html>

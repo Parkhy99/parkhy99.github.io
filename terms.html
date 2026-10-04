@@ -15,64 +15,84 @@ h1{font-size:26px;margin:0 0 8px}h2{font-size:18px;margin:32px 0 6px}
 p,li{margin:6px 0}a{color:var(--accent)}
 .muted{color:var(--muted)}.meta{color:var(--muted);font-size:14px;margin-bottom:24px}
 nav{display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:24px;font-size:15px}
-.lang{border-top:1px solid var(--line);margin-top:48px;padding-top:8px}
+.tools{margin-left:auto}
+/* 언어 전환: 스크립트가 body 에 data-show 를 달면 한 언어만 보이고, 스크립트가 없으면 둘 다 보인다 */
+body[data-show=ko] [data-lang=en],body[data-show=en] [data-lang=ko]{display:none}
+body:not([data-show]) .lang{border-top:1px solid var(--line);margin-top:48px;padding-top:8px}
+body:not([data-show]) a [data-lang=en]::before{content:" / "}
 </style>
 </head>
 <body>
 <main>
-<nav><a href="index.html">CANLogViewer</a><a href="privacy.html">개인정보처리방침 / Privacy Policy</a><a href="terms.html">이용약관 / Terms of Use</a></nav>
-<h1>이용약관 (최종 사용자 사용권 계약)</h1>
+<nav><a href="index.html">CANLogViewer</a>
+<a href="privacy.html"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span></a>
+<a href="terms.html"><span data-lang="ko">이용약관</span><span data-lang="en">Terms of Use</span></a>
+<span class="tools"><a href="#ko" data-set="ko">한국어</a> · <a href="#en" data-set="en">English</a></span></nav>
+<div data-lang="ko"><h1>이용약관 (최종 사용자 사용권 계약)</h1>
 <p class="meta">시행일: 2026. 10. 15<br>제공자: Parkhy  /  문의: <a href="mailto:canlogviewer.help@gmail.com">canlogviewer.help@gmail.com</a></p>
-<p>이 약관은 CANLogViewer(이하 &quot;앱&quot;)를 쓰는 조건입니다. 앱을 설치하거나 쓰면 이 약관에 동의한 것으로 봅니다.<br>App Store 에서 받은 경우 Apple 의 표준 사용권 계약(Licensed Application End User License Agreement)이<br>함께 적용되며, 이 약관과 다른 부분은 이 약관이 우선합니다(법이 허용하는 범위에서).</p>
+<p>이 약관은 CANLogViewer(이하 &quot;앱&quot;)를 쓰는 조건입니다. 앱을 설치하거나 쓰면 이 약관에 동의한 것으로 봅니다. App Store 에서 받은 경우 Apple 의 표준 사용권 계약(Licensed Application End User License Agreement)이 함께 적용되며, 이 약관과 다른 부분은 이 약관이 우선합니다(법이 허용하는 범위에서).</p>
 <h2>1. 사용권</h2>
-<p>제공자는 사용자에게 앱을 자신의 기기에서 쓸 수 있는, 양도할 수 없고 독점적이지 않은 사용권을 줍니다.<br>앱의 소유권과 지식재산권은 제공자에게 있으며, 사용자는 앱을 판매·임대·재배포하거나<br>역설계·분해할 수 없습니다(관련 법이 허용하는 경우는 제외).</p>
+<p>제공자는 사용자에게 앱을 자신의 기기에서 쓸 수 있는, 양도할 수 없고 독점적이지 않은 사용권을 줍니다. 앱의 소유권과 지식재산권은 제공자에게 있으며, 사용자는 앱을 판매·임대·재배포하거나 역설계·분해할 수 없습니다(관련 법이 허용하는 경우는 제외).</p>
 <h2>2. 무료 버전과 광고, 유료 기능</h2>
-<p>무료 버전에는 광고가 있습니다. 사용자 파일은 보상형 광고를 끝까지 본 뒤에만 열 수 있으며, 광고를 불러올 수<br>없으면(인터넷에 연결되지 않은 경우 등) 열 수 없습니다. 앱에 포함된 데모 파일은 광고·인터넷 없이 열 수 있습니다.<br>스토어 인앱 결제로 &quot;전체 기능&quot; 을 사면 광고가 없어지고, 인터넷 없이도 파일을 열 수 있습니다.<br>전체 기능은 두 가지 중에서 고릅니다: 평생 이용권(1회 결제)과 연간 구독(1년마다 자동 갱신). 가격은 결제 화면과 스토어에<br>표시됩니다. 구독은 갱신일 전까지 스토어의 정기 결제 설정에서 언제든 취소할 수 있으며, 취소해도 이미 결제한 기간이<br>끝날 때까지 쓸 수 있습니다. 구독이 끝나면 무료 버전으로 돌아갑니다.<br>결제·환불은 각 스토어의 정책을 따릅니다. 구매는 같은 스토어 계정으로 &quot;구매 복원&quot; 할 수 있습니다.</p>
+<p>무료 버전에는 광고가 있습니다. 사용자 파일은 보상형 광고를 끝까지 본 뒤에만 열 수 있으며, 광고를 불러올 수 없으면(인터넷에 연결되지 않은 경우 등) 열 수 없습니다. 앱에 포함된 데모 파일은 광고·인터넷 없이 열 수 있습니다. 스토어 인앱 결제로 &quot;전체 기능&quot; 을 사면 광고가 없어지고, 인터넷 없이도 파일을 열 수 있습니다. 전체 기능은 두 가지 중에서 고릅니다: 평생 이용권(1회 결제)과 연간 구독(1년마다 자동 갱신). 가격은 결제 화면과 스토어에 표시됩니다. 구독은 갱신일 전까지 스토어의 정기 결제 설정에서 언제든 취소할 수 있으며, 취소해도 이미 결제한 기간이 끝날 때까지 쓸 수 있습니다. 구독이 끝나면 무료 버전으로 돌아갑니다. 결제·환불은 각 스토어의 정책을 따릅니다. 구매는 같은 스토어 계정으로 &quot;구매 복원&quot; 할 수 있습니다.</p>
 <h2>3. 측정 결과에 대한 책임 (중요)</h2>
-<p>앱은 기록된 측정 파일을 읽어 화면에 보여 주는 도구입니다.<br>파일 형식, DBC/A2L 정의, 변환 규칙, 기기의 표시 한계 등에 따라 표시된 값·시각·이름이<br>실제와 다를 수 있습니다. 특히 DBC 자동 매칭 결과는 추천일 뿐이며, 사용자가 확인해야 합니다.</p>
-<p>앱의 표시만으로 차량·장비의 안전, 인증, 품질 판정, 수리·정비에 관한 결정을 내리지 마십시오.<br>중요한 판단은 검증된 계측 장비·소프트웨어와 전문가의 확인을 거쳐야 합니다.<br>앱은 차량이나 제어기(ECU)에 어떤 값도 쓰지 않는 읽기 전용 도구입니다.</p>
+<p>앱은 기록된 측정 파일을 읽어 화면에 보여 주는 도구입니다. 파일 형식, DBC/A2L 정의, 변환 규칙, 기기의 표시 한계 등에 따라 표시된 값·시각·이름이 실제와 다를 수 있습니다. 특히 DBC 자동 매칭 결과는 추천일 뿐이며, 사용자가 확인해야 합니다.</p>
+<p>앱의 표시만으로 차량·장비의 안전, 인증, 품질 판정, 수리·정비에 관한 결정을 내리지 마십시오. 중요한 판단은 검증된 계측 장비·소프트웨어와 전문가의 확인을 거쳐야 합니다. 앱은 차량이나 제어기(ECU)에 어떤 값도 쓰지 않는 읽기 전용 도구입니다.</p>
 <h2>4. 보증의 부인</h2>
-<p>앱은 &quot;있는 그대로&quot; 제공됩니다. 제공자는 법이 허용하는 최대 범위에서 상품성, 특정 목적 적합성,<br>정확성, 오류가 없음, 중단 없는 동작 등에 대해 명시적·묵시적 보증을 하지 않습니다.</p>
+<p>앱은 &quot;있는 그대로&quot; 제공됩니다. 제공자는 법이 허용하는 최대 범위에서 상품성, 특정 목적 적합성, 정확성, 오류가 없음, 중단 없는 동작 등에 대해 명시적·묵시적 보증을 하지 않습니다.</p>
 <h2>5. 책임의 제한</h2>
-<p>법이 허용하는 최대 범위에서, 제공자는 앱의 사용 또는 사용 불능으로 생긴 간접·부수·특별·결과적 손해<br>(데이터 손실, 영업 손실, 장비·차량 손상, 잘못된 판단으로 인한 손해를 포함)에 대해 책임지지 않습니다.<br>제공자의 책임이 인정되는 경우에도 그 총액은 사용자가 앱에 실제로 낸 금액을 넘지 않습니다.<br>고의 또는 중대한 과실로 인한 손해 등 법이 책임 제한을 허용하지 않는 경우에는 이 조항이 적용되지 않습니다.</p>
+<p>법이 허용하는 최대 범위에서, 제공자는 앱의 사용 또는 사용 불능으로 생긴 간접·부수·특별·결과적 손해 (데이터 손실, 영업 손실, 장비·차량 손상, 잘못된 판단으로 인한 손해를 포함)에 대해 책임지지 않습니다. 제공자의 책임이 인정되는 경우에도 그 총액은 사용자가 앱에 실제로 낸 금액을 넘지 않습니다. 고의 또는 중대한 과실로 인한 손해 등 법이 책임 제한을 허용하지 않는 경우에는 이 조항이 적용되지 않습니다.</p>
 <h2>6. 사용자 데이터</h2>
-<p>앱은 사용자의 파일을 기기 밖으로 보내지 않습니다. 무료 버전의 광고 SDK 가 광고를 위해 수집하는 정보는<br>개인정보처리방침에 적었습니다.<br>사용자는 자신이 여는 파일을 쓸 권리가 있어야 합니다.</p>
+<p>앱은 사용자의 파일을 기기 밖으로 보내지 않습니다. 무료 버전의 광고 SDK 가 광고를 위해 수집하는 정보는 개인정보처리방침에 적었습니다. 사용자는 자신이 여는 파일을 쓸 권리가 있어야 합니다.</p>
 <h2>7. 오픈소스</h2>
-<p>앱에는 오픈소스 소프트웨어가 들어 있으며, 각 라이선스 조건은 앱의 &quot;오픈소스 라이선스&quot; 화면에 있습니다.<br>해당 부분에는 그 라이선스가 이 약관보다 우선합니다.</p>
+<p>앱에는 오픈소스 소프트웨어가 들어 있으며, 각 라이선스 조건은 앱의 &quot;오픈소스 라이선스&quot; 화면에 있습니다. 해당 부분에는 그 라이선스가 이 약관보다 우선합니다.</p>
 <h2>8. 수출 규정</h2>
 <p>사용자는 앱을 쓰거나 옮길 때 적용되는 수출 통제 법규를 지켜야 합니다.</p>
 <h2>9. 약관의 변경과 해지</h2>
-<p>제공자는 약관을 바꿀 수 있으며, 바뀐 약관은 앱 업데이트 또는 게시로 알립니다.<br>사용자가 이 약관을 어기면 사용권은 끝나며, 사용자는 앱을 지워야 합니다.</p>
+<p>제공자는 약관을 바꿀 수 있으며, 바뀐 약관은 앱 업데이트 또는 게시로 알립니다. 사용자가 이 약관을 어기면 사용권은 끝나며, 사용자는 앱을 지워야 합니다.</p>
 <h2>10. 준거법</h2>
-<p>이 약관은 대한민국 법을 따르며, 분쟁은 수원지방법원을 제1심 관할 법원으로 합니다.<br>소비자 보호에 관한 법률이 사용자에게 더 유리한 권리를 주는 경우 그 권리는 제한되지 않습니다.</p>
+<p>이 약관은 대한민국 법을 따르며, 분쟁은 수원지방법원을 제1심 관할 법원으로 합니다. 소비자 보호에 관한 법률이 사용자에게 더 유리한 권리를 주는 경우 그 권리는 제한되지 않습니다.</p>
 <h2>11. 문의</h2>
-<p><a href="mailto:canlogviewer.help@gmail.com">canlogviewer.help@gmail.com</a></p>
-<div class="lang"><h1>Terms of Use (End User License Agreement)</h1>
+<p><a href="mailto:canlogviewer.help@gmail.com">canlogviewer.help@gmail.com</a></p></div>
+<div class="lang" data-lang="en"><h1>Terms of Use (End User License Agreement)</h1>
 <p class="meta">Effective date: October 15, 2026<br>Provider: Parkhy  /  Contact: <a href="mailto:canlogviewer.help@gmail.com">canlogviewer.help@gmail.com</a></p>
-<p>These terms govern your use of CANLogViewer (the &quot;App&quot;). By installing or using the App you agree to them.<br>If you obtained the App from the App Store, Apple&#x27;s Licensed Application End User License Agreement also<br>applies; where it differs, these terms prevail to the extent permitted by law.</p>
+<p>These terms govern your use of CANLogViewer (the &quot;App&quot;). By installing or using the App you agree to them. If you obtained the App from the App Store, Apple&#x27;s Licensed Application End User License Agreement also applies; where it differs, these terms prevail to the extent permitted by law.</p>
 <h2>1. License</h2>
-<p>The Provider grants you a non-transferable, non-exclusive license to use the App on devices you own or<br>control. The Provider retains all ownership and intellectual property rights in the App. You may not sell,<br>rent, redistribute, reverse engineer or disassemble the App, except as permitted by applicable law.</p>
+<p>The Provider grants you a non-transferable, non-exclusive license to use the App on devices you own or control. The Provider retains all ownership and intellectual property rights in the App. You may not sell, rent, redistribute, reverse engineer or disassemble the App, except as permitted by applicable law.</p>
 <h2>2. Free version, ads and paid features</h2>
-<p>The free version contains ads. You can open your own files only after watching a rewarded ad to the end,<br>and cannot open them when no ad can be loaded (for example without an internet connection). The demo files<br>included in the App open without ads or an internet connection.<br>Buying &quot;Full version&quot; through the store&#x27;s in-app purchase removes ads and lets you open files without an<br>internet connection. You can choose between a lifetime license (one-time payment) and a yearly subscription<br>(renews automatically every year). Prices are shown on the purchase screen and in the store. You can cancel<br>the subscription at any time before the renewal date in the store&#x27;s subscription settings; you keep access<br>until the end of the period you already paid for, after which the App returns to the free version.<br>Payments and refunds follow each store&#x27;s policies. Purchases can be restored with &quot;Restore purchases&quot; on<br>the same store account.</p>
+<p>The free version contains ads. You can open your own files only after watching a rewarded ad to the end, and cannot open them when no ad can be loaded (for example without an internet connection). The demo files included in the App open without ads or an internet connection. Buying &quot;Full version&quot; through the store&#x27;s in-app purchase removes ads and lets you open files without an internet connection. You can choose between a lifetime license (one-time payment) and a yearly subscription (renews automatically every year). Prices are shown on the purchase screen and in the store. You can cancel the subscription at any time before the renewal date in the store&#x27;s subscription settings; you keep access until the end of the period you already paid for, after which the App returns to the free version. Payments and refunds follow each store&#x27;s policies. Purchases can be restored with &quot;Restore purchases&quot; on the same store account.</p>
 <h2>3. Responsibility for measurement results (important)</h2>
-<p>The App reads recorded measurement files and displays them. Depending on file formats, DBC/A2L<br>definitions, conversion rules and display limitations, displayed values, times and names may differ from<br>reality. In particular, DBC auto-matching results are suggestions only and must be checked by you.</p>
-<p>Do not base decisions about vehicle or equipment safety, certification, quality or repair solely on what<br>the App displays. Important decisions must be verified with validated measurement equipment and software<br>and by qualified experts. The App is a read-only tool and never writes anything to a vehicle or ECU.</p>
+<p>The App reads recorded measurement files and displays them. Depending on file formats, DBC/A2L definitions, conversion rules and display limitations, displayed values, times and names may differ from reality. In particular, DBC auto-matching results are suggestions only and must be checked by you.</p>
+<p>Do not base decisions about vehicle or equipment safety, certification, quality or repair solely on what the App displays. Important decisions must be verified with validated measurement equipment and software and by qualified experts. The App is a read-only tool and never writes anything to a vehicle or ECU.</p>
 <h2>4. Disclaimer of warranties</h2>
-<p>The App is provided &quot;as is&quot;. To the maximum extent permitted by law, the Provider makes no express or<br>implied warranties, including merchantability, fitness for a particular purpose, accuracy, absence of<br>errors or uninterrupted operation.</p>
+<p>The App is provided &quot;as is&quot;. To the maximum extent permitted by law, the Provider makes no express or implied warranties, including merchantability, fitness for a particular purpose, accuracy, absence of errors or uninterrupted operation.</p>
 <h2>5. Limitation of liability</h2>
-<p>To the maximum extent permitted by law, the Provider is not liable for any indirect, incidental, special<br>or consequential damages arising from the use of or inability to use the App (including loss of data,<br>loss of business, damage to equipment or vehicles, or damages from wrong decisions). Where liability is<br>established, the Provider&#x27;s total liability shall not exceed the amount you actually paid for the App.<br>This clause does not apply where the law does not allow such limitation, such as damages caused by<br>intent or gross negligence.</p>
+<p>To the maximum extent permitted by law, the Provider is not liable for any indirect, incidental, special or consequential damages arising from the use of or inability to use the App (including loss of data, loss of business, damage to equipment or vehicles, or damages from wrong decisions). Where liability is established, the Provider&#x27;s total liability shall not exceed the amount you actually paid for the App. This clause does not apply where the law does not allow such limitation, such as damages caused by intent or gross negligence.</p>
 <h2>6. User data</h2>
-<p>The App does not send your files off your device. Information collected by the ad SDK in the free<br>version is described in the Privacy Policy. You must have the right to use the files you open.</p>
+<p>The App does not send your files off your device. Information collected by the ad SDK in the free version is described in the Privacy Policy. You must have the right to use the files you open.</p>
 <h2>7. Open source</h2>
-<p>The App contains open-source software; the license terms are shown under &quot;Open-source licenses&quot; in the<br>App. For those components, their licenses prevail over these terms.</p>
+<p>The App contains open-source software; the license terms are shown under &quot;Open-source licenses&quot; in the App. For those components, their licenses prevail over these terms.</p>
 <h2>8. Export</h2>
 <p>You must comply with the export control laws that apply to your use or transfer of the App.</p>
 <h2>9. Changes and termination</h2>
-<p>The Provider may change these terms and will announce changes through App updates or publication. If you<br>breach these terms, your license ends and you must delete the App.</p>
+<p>The Provider may change these terms and will announce changes through App updates or publication. If you breach these terms, your license ends and you must delete the App.</p>
 <h2>10. Governing law</h2>
-<p>These terms are governed by the laws of the Republic of Korea, and the Suwon District Court has jurisdiction as the court<br>of first instance. Rights granted to you by mandatory consumer protection laws are not limited.</p>
+<p>These terms are governed by the laws of the Republic of Korea, and the Suwon District Court has jurisdiction as the court of first instance. Rights granted to you by mandatory consumer protection laws are not limited.</p>
 <h2>11. Contact</h2>
 <p><a href="mailto:canlogviewer.help@gmail.com">canlogviewer.help@gmail.com</a></p></div>
 </main>
+<script>
+/* 주소 끝 #ko / #en 이 있으면 그 언어, 없으면 브라우저 언어(한국어면 한국어, 그 밖에는 영어). 추적·저장 없음 */
+(function () {
+  var h = location.hash.replace('#', '');
+  var l = (h === 'ko' || h === 'en') ? h : (((navigator.language || '').toLowerCase().indexOf('ko') === 0) ? 'ko' : 'en');
+  function set(x) { document.body.setAttribute('data-show', x); document.documentElement.lang = x; }
+  set(l);
+  var a = document.querySelectorAll('[data-set]');
+  for (var i = 0; i < a.length; i++) {
+    a[i].addEventListener('click', function (e) { e.preventDefault(); set(this.getAttribute('data-set')); });
+  }
+})();
+</script>
 </body>
 </html>
